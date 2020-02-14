@@ -1,9 +1,7 @@
 <?php
 /**
- * Class hangman.php
- *
+ * Class Game.php
  * Class documentation
-
  *  All controls and functions for a running game go here:
  */
 

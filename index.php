@@ -4,11 +4,6 @@
 require_once ("classes/Config.php");
 require_once ("classes/Game.php");
 
-//echo __FILE__.__LINE__.__FUNCTION__.'<br />';
-//echo '<pre>';
-//var_dump($_POST);
-//echo '</pre>';
-
 session_start();
 
 // @info Setup session variables:
@@ -22,9 +17,12 @@ if (!isset($_SESSION['game'] )){
        return header('Location: startscherm.php');
     }
 
-
     $_SESSION['game'] = new Game();
     $_SESSION['config'] = new Config();
+    // maakt een sessie om gebruikte letters bij te houden
+    $_SESSION['gebruikteLetters'] = array();
+
+    $_SESSION['config']->SetKeyWord($_POST['keyword']);
 
     // @info max = 10
     $_SESSION['imgProgression'] = 0;
@@ -38,20 +36,11 @@ if (!isset($_SESSION['game'] )){
         $_SESSION['difficulty'] = "easy";
     }
 
-
-//    echo __FILE__.__LINE__.__FUNCTION__.'<br />';
-//    echo '<pre>';
-//    var_dump($_SESSION['difficulty']);
-//    echo '</pre>';
-
-
     $keyword = $_SESSION['config']->GetKeyWord();
 
     if(!isset($_SESSION['key'])){
         $_SESSION['key'] = $keyword;
     }
-
-
 
 // @info breekt het keyword in aparte letters voor een array.
     $_SESSION['gekozenLetters'] = str_split($keyword);
@@ -68,13 +57,10 @@ if (!isset($_SESSION['game'] )){
     }
 }
 
-// maakt een sessie voor letters die al gebruikt zijn
-$_SESSION['gebruikteLetters'] = array();
 
 $options = $_SESSION['config']->Alphabet;
 
     // @info gebruik deze voor debugging of om te spieken:
-
 /*
     echo __FILE__.__LINE__.__FUNCTION__.'<br />';
     echo '<pre>';
@@ -86,15 +72,11 @@ $options = $_SESSION['config']->Alphabet;
     var_dump($_SESSION['key']);
     echo '</pre>';
 */
-
     // @info | als een letter is geraden doe er iets mee:
     if(isset($_GET['inputletter'])) {
-
         $inputInCaps = $_GET['inputletter'];
-
         // @info | input letter naar lower om hem te vergelijken met de te raden letters
         $loweredInput = strtolower($inputInCaps);
-
         // valideer de input van de letter:
         $_SESSION['game']->ValidateInput($inputInCaps, $loweredInput);
 

@@ -2,9 +2,7 @@
 
 // @info als de speler het woord geraden heeft echo:
 if (!in_array("__ ", $_SESSION['TeRadenLetters'])){
-
     Echo "<div id='messageBox'><h2 class='alert'>Gefeliciteerd, je bent gewonnen!</h2>";
-
     echo 'Het woord was: <b>';
     echo ($_SESSION['key']);
     echo "</b>
@@ -20,12 +18,6 @@ if (!in_array("__ ", $_SESSION['TeRadenLetters'])){
 <html>
 <head>
     <title>Opracht Hangman</title>
-
-    <!-- Latest compiled and minified CSS
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    Latest compiled and minified JavaScript
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-     fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700|Righteous&display=swap" rel="stylesheet">
     <!--  custom css -->
     <link rel="stylesheet" href="style/hangman.css">
@@ -49,6 +41,7 @@ if (!in_array("__ ", $_SESSION['TeRadenLetters'])){
   <h2>Kies een letter:</h2>
     <form action="/index.php" method="post">
         <?php
+
         foreach ( $options as $optionValue) {
           if (in_array($optionValue, $_SESSION['gebruikteLetters'])) {
             echo $optionValue;
