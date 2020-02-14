@@ -43,13 +43,15 @@ if (!isset($_SESSION['game'] )){
 //    echo '<pre>';
 //    var_dump($_SESSION['difficulty']);
 //    echo '</pre>';
-    
+
 
     $keyword = $_SESSION['config']->GetKeyWord();
 
     if(!isset($_SESSION['key'])){
         $_SESSION['key'] = $keyword;
     }
+
+
 
 // @info breekt het keyword in aparte letters voor een array.
     $_SESSION['gekozenLetters'] = str_split($keyword);
@@ -65,6 +67,9 @@ if (!isset($_SESSION['game'] )){
         $_SESSION['TeRadenLetters'][$i] = "__ ";
     }
 }
+
+// maakt een sessie voor letters die al gebruikt zijn
+$_SESSION['gebruikteLetters'] = array();
 
 $options = $_SESSION['config']->Alphabet;
 

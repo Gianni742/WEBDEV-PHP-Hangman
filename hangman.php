@@ -38,7 +38,7 @@ if (!in_array("__ ", $_SESSION['TeRadenLetters'])){
     <div class="row">
         <div class="col-md-3">
 
-                <h2>Hangman Game</h2>
+                <h1>Hangman</h1>
                 <h3>Probeer het woord te raden:</h3>
 
                 <div class="raadsel">
@@ -56,10 +56,12 @@ if (!in_array("__ ", $_SESSION['TeRadenLetters'])){
     <form action="/index.php" method="post">
         <?php
         foreach ( $options as $optionValue) {
+          if (in_array($optionValue, $_SESSION['gebruikteLetters'])) {
+            echo $optionValue;
+          } else {
             ?>
-
-            <a href="?inputletter=<?php echo $optionValue ?>"><?php echo $optionValue ?></a>
-            <?php
+              <a href="?inputletter=<?php echo $optionValue ?>"><?php echo $optionValue ?></a> <?php
+          }
         }
         ?>
     </form>
