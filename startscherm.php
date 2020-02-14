@@ -26,19 +26,20 @@ if (isset($_POST['Opnieuw'])){
 <body>
       <div id="wrapper">
             <h1>hangman</h1>
+      <div class="optionline">
     <form method="post" action="index.php">
-        <div class="">
             <label for="keyword">Pick your keyword:
                 <input type="password" name="keyword" autocomplete="off" required>
             </label>
         </div>
-
+<div class="optionline">
     <label for="difficulty">Select difficulty:
         <select id="difficulty" name="difficulty">
             <option selected value="10">Easy</option>
             <option value="7"> Hard</option>
         </select>
     </label>
+</div>
 
         <h3><button type="submit" name="startGame">Start Game</button></h3>
     </form>
