@@ -17,7 +17,7 @@ if (!in_array("__ ", $_SESSION['TeRadenLetters'])){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Opracht Hangman</title>
+    <title>Opdracht Hangman</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700|Righteous&display=swap" rel="stylesheet">
     <!--  custom css -->
     <link rel="stylesheet" href="style/hangman.css">
@@ -44,7 +44,7 @@ if (!in_array("__ ", $_SESSION['TeRadenLetters'])){
 
         foreach ( $options as $optionValue) {
           if (in_array($optionValue, $_SESSION['gebruikteLetters'])) {
-            echo $optionValue;
+            echo $optionValue ;
           } else {
             ?>
               <a href="?inputletter=<?php echo $optionValue ?>"><?php echo $optionValue ?></a> <?php
