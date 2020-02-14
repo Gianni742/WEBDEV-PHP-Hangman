@@ -1,0 +1,29 @@
+/*
+    Document   : style
+*/
+
+body {
+    font-size:12px;
+}
+
+
+h2.alert{
+    color: #ff0030;
+}
+
+.content{
+    margin-left:5rem;
+}
+
+.hangman{
+    margin-top:3rem;
+    margin-left:10rem;
+}
+
+.keuzemenu {
+    margin-top:3rem;
+    margin-left:5rem;
+   border: 3px solid #262626;
+    font-size:30px;
+    max-width:420px;
+}

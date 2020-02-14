@@ -18,6 +18,10 @@ if (isset($_POST['Opnieuw'])){
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hangman startscherm</title>
+    <!--  custom css -->
+    <link rel="stylesheet" href="style/startscherm.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700|Righteous&display=swap" rel="stylesheet">
 </head>
 <body>
     <h3> Welkom bij hangman </h3>
