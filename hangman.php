@@ -44,7 +44,7 @@ if (!in_array("__ ", $_SESSION['TeRadenLetters'])){
 
         foreach ( $options as $optionValue) {
           if (in_array($optionValue, $_SESSION['gebruikteLetters'])) {
-            echo $optionValue ;
+            echo $optionValue." ";
           } else {
             ?>
               <a href="?inputletter=<?php echo $optionValue ?>"><?php echo $optionValue ?></a> <?php
