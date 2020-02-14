@@ -40,14 +40,13 @@ class Game extends Config
                 }
                 // wanneer al je pogingen op zijn:
                 if(($_SESSION['imgProgression']  ==  10) && ($_SESSION['maxAttempts'] == 0)){
-                    Echo "<h2 class='alert'>Helaas je hebt verloren probeer het opnieuw!</h2>";
-                    echo '<pre> Het woord was: ';
+                    Echo "<div id='messageBox'><h2 class='alert'>Verloren!</h2>";
+                    echo 'Het woord was: <b>';
                     echo ($_SESSION['key']);
-                    echo '</pre>';
-                    echo "
+                    echo "</b>
                    <form action=\"startscherm.php\" method=\"POST\">
-                        <input type=\"submit\" name=\"Opnieuw\" value=\"Probeer opnieuw\">
-                   </form>
+                        <input id='messageButton' type=\"submit\" name=\"Opnieuw\" value=\"Probeer opnieuw\">
+                   </form></div>
                   ";
                 }
             }
