@@ -24,10 +24,8 @@ if (isset($_POST['Opnieuw'])){
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700|Righteous&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h3> Welkom bij hangman </h3>
-
-
-
+      <div id="wrapper">
+            <h1>hangman</h1>
     <form method="post" action="index.php">
     <label for="difficulty">Select difficulty:
         <select id="difficulty" name="difficulty">
@@ -37,7 +35,6 @@ if (isset($_POST['Opnieuw'])){
     </label>
         <h3><button type="submit" name="startGame">Start Game</button></h3>
     </form>
-
-
+  </div>
 </body>
 </html>
