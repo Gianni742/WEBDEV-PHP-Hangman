@@ -75,6 +75,7 @@ if (!in_array("__ ", $_SESSION['TeRadenLetters'])){
     <img src="assets/img/<?php echo $_SESSION['imgProgression'] ?>.jpg">
 </div>
 </div>
+    <img src="assets/img/<?php echo $_SESSION['imgProgression'] ?>.png  ">
 </div>
 </body>
 </html>
