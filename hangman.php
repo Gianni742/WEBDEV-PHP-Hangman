@@ -2,7 +2,7 @@
 
 // @info als de speler het woord geraden heeft echo:
 if (!in_array("__ ", $_SESSION['TeRadenLetters'])){
-    Echo "<div id='messageBox'><h2 class='alert'>Gefeliciteerd, je bent gewonnen!</h2>";
+    Echo "<div id='messageBox'><h2 class='alert'>Gefeliciteerd, je hebt gewonnen!</h2>";
     echo 'Het woord was: <b>';
     echo ($_SESSION['key']);
     echo "</b>

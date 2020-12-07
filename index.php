@@ -4,7 +4,9 @@
 require_once ("classes/Config.php");
 require_once ("classes/Game.php");
 
+
 session_start();
+$illegalCharacters = "/[`'\"~!@# $*()<>,:;{}\|]/";
 
 // @info Setup session variables:
 
@@ -12,8 +14,10 @@ session_start();
 // draag je objects in een session.
 if (!isset($_SESSION['game'] )){
 
-    if((!isset($_POST['startGame'])))
+
+    if((!isset($_POST['startGame']) || preg_match('~[0-9]~',$_POST['keyword']) || preg_match($illegalCharacters,$_POST['keyword'])))
     {
+       $_SESSION['errorMsg'] = 'Input can only contain letters!';
        return header('Location: startscherm.php');
     }
 
@@ -60,13 +64,8 @@ if (!isset($_SESSION['game'] )){
 
 $options = $_SESSION['config']->Alphabet;
 
-    // @info gebruik deze voor debugging of om te spieken:
+    // @info gebruik deze om te spieken:
 /*
-    echo __FILE__.__LINE__.__FUNCTION__.'<br />';
-    echo '<pre>';
-    var_dump($_SESSION['TeRadenLetters']);
-    echo '</pre>';
-
     echo __FILE__.__LINE__.__FUNCTION__.'<br />';
     echo '<pre>';
     var_dump($_SESSION['key']);

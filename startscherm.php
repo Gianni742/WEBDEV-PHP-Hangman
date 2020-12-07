@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+if(!isset($_SESSION['errorMsg'])){
+    $_SESSION['errorMsg'] = '';
+}
+
+
 // @info start een nieuwe sessie wanneer het spel voorbij is (nieuw spel):
 if (isset($_POST['Opnieuw'])){
     session_destroy();
@@ -26,6 +31,7 @@ if (isset($_POST['Opnieuw'])){
 <body>
       <div id="wrapper">
             <h1>hangman</h1>
+            <p class="error"><?= isset($_SESSION['errorMsg']) ? $_SESSION['errorMsg'] : ''  ?></p>
       <div class="optionline">
     <form method="post" action="index.php">
             <label for="keyword">Pick your keyword:

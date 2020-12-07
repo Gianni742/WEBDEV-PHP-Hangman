@@ -1,9 +1,7 @@
 <?php
 /**
  * Class settings.php
- *
  * Class documentation
-
  *  Setup the basic configs to start a new game.
  */
 

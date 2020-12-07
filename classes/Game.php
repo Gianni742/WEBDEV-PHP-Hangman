@@ -12,9 +12,7 @@ class Game extends Config
     // @params: Capitalized letter wordt gebruikt om overige & geraden letters te tonen
     // @params: LoweredInputLetter wordt gebruikt om keyword letters te vergelijken
     public function ValidateInput($cappedInputLetter, $loweredInputLetter){
-      // steekt gebruikte letter in de array
       array_push($_SESSION['gebruikteLetters'], $cappedInputLetter);
-        // als input voorkomt in array
             if (in_array($loweredInputLetter, $_SESSION['gekozenLetters'])) {
                 // blijf zolang doorzoeken totdat alle mogelijke resultaten gevonden zijn:
                 // Dit is nodig wanneer een letter meerdere keren voorkomt in het keyword.

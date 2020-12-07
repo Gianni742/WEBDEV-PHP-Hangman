@@ -80,3 +80,7 @@ select:hover, select:focus, input:hover, input:focus {
 body {
   font-family: 'Raleway', sans-serif;
 }
+
+.error{
+  color: #ff3338;
+}
